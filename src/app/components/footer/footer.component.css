@@ -1,0 +1,11 @@
+footer {
+ background-color: darkcyan;
+ font-family: 'Saira Condensed', sans-serif;
+ width: 100%;
+ bottom: 0%;
+}
+
+.fixed-footer {
+    position: fixed;
+    bottom: 0%;
+}

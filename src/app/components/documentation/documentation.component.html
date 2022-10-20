@@ -1,0 +1,120 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3 col-sm-4 sidebar">
+      <div class="left-navigation">
+        <ul class="list">
+          <h5><strong>Getting Started</strong></h5>
+          <li>API Access Key</li>
+          <li>HTTPS Encryption</li>
+          <li>JSONP Callbacks</li>
+          <li>API Errors</li>
+        </ul>
+
+        <br />
+
+        <ul class="list">
+          <h5><strong>API Endpoints</strong></h5>
+          <li>Real-Time Flights</li>
+          <li>Historical Flights</li>
+          <li>Airline Routes</li>
+          <li>Airports</li>
+        </ul>
+        <br>
+        <ul class="list">
+          <h5><strong>Code Examples</strong></h5>
+          <li>jQuery ajax</li>
+          <li>axios</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-9 col-sm-8 main-content">
+      <div class="item pb-5">
+        <div class="header">
+          <h3>API Documentation</h3>
+        </div>
+        <div class="content">
+          <p>
+            The Fligttry API was built to provide a simple way of accessing global aviation data for real-time and historical flights as well as allow customers to tap into an extensive data set of airline routes and other up-to-date aviation-related information. Requests to the REST API are made using a straightforward HTTP GET URL structure and responses are provided in lightweight JSON format.
+          </p>
+          <p>
+            The following API documentation can be applied for any major programming langauge and will present general integration guides and explanations around API endpoints, request parameters and response objects. If any questions remain unanswered for you, simply reach out to the flighttry support team for assistance.
+          </p>
+        </div>
+      </div>
+
+      <div class="item pb-5">
+        <div class="header">
+          <h3>Getting Started</h3>
+          <h4>API Access Key & Authentication</h4>
+        </div>
+        <div class="content">
+          <p>
+            After creating an flighttry account, you will be able to retrieve your unique API access key using your account dashboard. Each flighttry account can only be assigned one API access key.</p>
+          <p>
+            To connect to the API, simply attach the <span class="text-danger">access_key</span> parameter to any valid API endpoint URL and set it to your access key. Find an example below, you can click the button on the right side of the code to execute the shown API request.</p>
+            <div class="code">
+              <code>https://api.flighttry.com/v1/flights<br/>
+                <span>? apikey = API_KEY</span></code>
+            </div>
+        </div>
+      </div>
+
+      <div class="item pb-5">
+        <div class="header">
+          <h4>256-bit HTTPS Encryption</h4>
+        </div>
+        <div class="content">
+          <p>
+            Customers registered for the flighttry Basic Plan or higher may connect to the API using industry-standard 256-bit HTTPS (SSL) encryption. To connect via HTTPS, simply replace the standard http protocol in your API request with <span class="text-danger">https</span>.</p>
+            <h6>Example API Request:</h6>
+            <div class="code">
+              <code><span>https:</span>//api.flighttry.com</code>
+            </div>
+        </div>
+      </div>
+
+      <div class="item pb-5">
+        <div class="header">
+          <h4>JSONP Callbacks</h4>
+        </div>
+        <div class="content">
+          <p>
+            The flighttry API supports JSONP Callbacks. To use the JSONP functionality, simply append the callback parameter to your API endpoint URL and set it to a function name of your choice. If a function name is provided, the API will return your API response wrapped inside the tags of the function you specified.</p>
+            <h6>Example API Request:</h6>
+            <div class="code">
+              <code>https://api.flighttry.com/v1/flights <br/>
+                ? apikey = API_KEY<br/>
+                <span>& callback = MY_FUNCTIONhttps</span></code>
+            </div>
+        </div>
+      </div>
+
+      <div class="item pb-5">
+        <div class="header">
+          <h4>API Errors</h4>
+        </div>
+        <div class="content">
+          <p>
+            If your request to the aviationstack API does not succeed, the API will return a JSON error response that contains error <span class="text-danger">code</span> and <span class="text-danger">message</span> objects indicating the type of error that occurred. The API also supports HTTP status codes, returning a code of <span class="text-danger">200</span> for successful requests, and an error status code (e.g. <span class="text-danger">404</span>) for failed requests.</p>
+            <p>
+              If a validation error occurs, hence, an API parameter is used in an invalid way, there will be an additional <span class="text-danger">context</span> object containing multiple sub-objects with the associated API parameter as the key and details about the given validation error(s) further sub-objects. Each instance of a validation error contains <span class="text-danger">key</span> and <span class="text-danger">message</span> objects.</p>
+            <h6>Example API Request:</h6>
+            <div class="code">
+              <code><span>
+                {{ '{' }}<br>
+                  &nbsp;&nbsp;"error": {{ '{' }} <br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"status": "validation_error", <br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"message": "Request failed with validation error", <br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"data": {{ '{' }}<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"flights" : []<br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ '}' }} <br>
+                  &nbsp;&nbsp;&nbsp;&nbsp;{{ '}' }}<br>
+                {{ '}' }}<br>
+                </span>
+              </code>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

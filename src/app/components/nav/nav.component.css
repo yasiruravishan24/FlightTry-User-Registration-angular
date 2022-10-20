@@ -1,0 +1,21 @@
+.navbar .container-fluid .navbar-brand img{
+    width: auto;
+    height: 50px;
+    object-fit:cover;
+}
+
+.navbar .nav-link{
+    font-family: 'Saira Condensed', sans-serif;
+    color: black;
+    font-weight: 600;
+    font-size: 20px;
+    padding-inline: 15px;
+}
+
+.navbar .nav-link:hover{
+    color:darkcyan;
+}
+
+.navbar .active{
+    color:darkcyan !important;
+}

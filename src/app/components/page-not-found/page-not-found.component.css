@@ -1,0 +1,13 @@
+.container {
+    overflow: hidden;
+ }
+ .row {
+     height: 82.7vh;
+     background-color: white;
+ }
+ .col-md-12 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ 

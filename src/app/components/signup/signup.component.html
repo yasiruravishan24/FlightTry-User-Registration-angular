@@ -1,0 +1,83 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <img src="../../../assets/apigif.gif" alt="" width="500">
+    </div>
+    <div class="col-md-6">
+      <div class="signup">
+        <form class="d-gird" [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+          <h4>Sign Up</h4>
+          <div class="d-flex gap-2 mb-3">
+            <div class="flex-fill position-relative">
+              <label for="f_name" class="form-label">First Name</label>
+              <input type="text" class="form-control" [ngClass]="{'is-invalid': submitted && signUpForm.controls['firstname'].errors, 'is-valid': submitted && !signUpForm.controls['firstname'].errors }" formControlName="firstname"  required>
+                <div *ngIf="signUpForm.controls['firstname'].errors && signUpForm.controls['firstname'].errors['required']" class="invalid-tooltip">
+                 First Name can not be empty
+                </div>
+                <div *ngIf="signUpForm.controls['firstname'].errors && signUpForm.controls['firstname'].errors['maxlength']" class="invalid-tooltip">
+                  The max length of 25 characters is reached
+                 </div>
+            </div>
+            <div class="flex-fill position-relative">
+              <label for="l_name" class="form-label">Last Name</label>
+              <input type="text" class="form-control" [ngClass]="{'is-invalid': submitted && signUpForm.controls['lastname'].errors, 'is-valid': submitted && !signUpForm.controls['lastname'].errors }" formControlName="lastname">
+              <div *ngIf="signUpForm.controls['lastname'].errors && signUpForm.controls['lastname'].errors['required']" class="invalid-tooltip">
+                Second Name can not be empty
+               </div>
+               <div *ngIf="signUpForm.controls['lastname'].errors && signUpForm.controls['lastname'].errors['maxlength']" class="invalid-tooltip">
+                 The max length of 25 characters is reached
+                </div>
+            </div>
+          </div>
+          <div class=" mb-3 position-relative">
+            <label class="form-label" for="email">Email</label>
+            <input type="email" class="form-control" [ngClass]="{'is-invalid': (submitted && signUpForm.controls['email'].errors), 'is-valid': (submitted && !signUpForm.controls['email'].errors)}" formControlName="email" appUniqueEmail>
+             <div *ngIf="signUpForm.controls['email'].errors && signUpForm.controls['email'].errors['required']" class="invalid-tooltip">
+              Email can not be empty
+             </div>
+             <div *ngIf="signUpForm.controls['email'].errors && (signUpForm.controls['email'].errors['email'] || signUpForm.controls['email'].errors['pattern'])" class="invalid-tooltip">
+               Please enter valid email
+              </div>
+              <div *ngIf="signUpForm.controls['email'].errors && signUpForm.controls['email'].errors['emailExist']" class="invalid-tooltip">
+                This email already exists
+              </div> 
+          </div> 
+          <div class="mb-3 position-relative">
+            <label for="host" class="form-label">Host</label>
+            <input type="text" class="form-control" [ngClass]="{'is-invalid': (submitted && signUpForm.controls['host'].errors) || hostExist, 'is-valid': (submitted && !signUpForm.controls['host'].errors) || (submitted && !hostExist) }" formControlName="host" appUniqueHost>
+            <div *ngIf="signUpForm.controls['host'].errors && signUpForm.controls['host'].errors['required']" class="invalid-tooltip">
+              Host can not be empty
+             </div>
+             <div *ngIf="signUpForm.controls['host'].errors && signUpForm.controls['host'].errors['pattern']" class="invalid-tooltip">
+               Please enter valid host
+              </div>
+              <div *ngIf="signUpForm.controls['host'].errors && signUpForm.controls['host'].errors['hostExist']" class="invalid-tooltip">
+                This host already exists
+              </div> 
+          </div>
+          <div class="form-check mb-3 position-relative">
+            <input class="form-check-input" type="checkbox" [ngClass]="{'is-invalid': submitted && signUpForm.controls['accept'].errors, 'is-valid': submitted && !signUpForm.controls['accept'].errors }" formControlName="accept" required>
+            <label class="form-check-label" for="invalidCheck2">
+              Agree to terms and conditions
+            </label>
+          </div>
+          <div class="md-3 d-grid">
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h5 class="modal-title" id="staticBackdropLabel">Hey {{ userName }}</h5>
+  </div>
+  <div class="modal-body">
+    <p>Congratulations, your account has been successfully created.
+      please check your email.</p>
+  </div>
+  <div class="modal-footer">
+    <a class="btn" routerLink="/docs" (click)="modal.close('cotent')">Go to Documentation</a>
+  </div>
+</ng-template>

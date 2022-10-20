@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.app {
+    background-image: url('../assets/background.webp');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.mobileBlock {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+    background-image: url('../assets/background.webp');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.mobileBlock h2{
+    font-size: 62px;
+    text-align: center;
+
+}
+.mobileBlock i{
+    font-size: 62px;
+    text-align: center;
+}
+#preloader {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.603);
+    z-index: 999999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle-spinng {
+    display: flex;
+}
+
+.circle-spinng span {
+    display: block;
+    height: 18px;
+    width: 18px;
+    background-color: darkcyan;
+    border-radius: 50%;
+    margin-right: 8px;
+    animation: circle-spinng 1000ms ease infinite;
+}
+
+.circle-spinng span:nth-child(2) {
+    animation-delay: 150ms;
+}
+
+.circle-spinng span:nth-child(3) {
+    animation-delay: 250ms;
+}
+
+.circle-spinng span:nth-child(4) {
+    animation-delay: 350ms;
+}
+
+@keyframes circle-spinng {
+    50% {
+        transform: translateY(-50px);
+    }
+}
+
+@media (max-width:768px) {
+    .mobileBlock h2{
+        font-size: 48px;
+    } 
+}
+
+

@@ -1,0 +1,94 @@
+.container-fluid {
+    overflow: hidden;
+}
+.row {
+    height: 82.7vh;
+}
+
+.heading {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.heading .text {
+    padding-left: 3rem;
+}
+
+.heading .text h1 {
+    font-family: 'Saira Condensed', sans-serif;
+    font-size: 60px;
+    font-weight: bold;
+    color: black;
+}
+
+.heading .text h3 {
+    font-family: 'Saira Condensed', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: darkcyan;
+    text-align: justify;
+}
+
+.heading .text .list .item {
+    font-family: 'Saira Condensed', sans-serif;
+    color: black;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.heading .text .list .link a {
+    font-family: 'Saira Condensed', sans-serif;
+    background: darkcyan !important;
+    color: white;
+    font-weight: 700;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+}
+
+
+.drop-in {
+    animation: drop-in 1s ease 200ms backwards;
+}
+
+.drop-in-2 {
+    animation: drop-in 1200ms ease 500ms backwards;
+}
+
+@keyframes drop-in {
+    from {
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(0px);
+    }
+}
+.planeImage{
+   position: relative;
+}
+.planeImage img{
+    position: absolute;
+    right: -100px;
+    top: 200px;
+    width: 110%;
+}
+
+.drop-in-right {
+    animation: drop-in-right 1.5s ease 500ms backwards;
+}
+
+@keyframes drop-in-right {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
